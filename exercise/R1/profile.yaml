@@ -1,0 +1,33 @@
+# 生成用户数量
+USER_COUNT: 1000
+# 随机种子
+SEED: 42
+
+# 类别特征
+categorical_features:
+  性别:
+    choices: ['男', '女']
+    probabilities: [0.48, 0.52]
+  所在城市:
+    choices: ['北京', '上海', '广州', '深圳', '其他']
+    probabilities: [0.18, 0.17, 0.15, 0.15, 0.35]
+  消费水平:
+    choices: ['高', '中', '低']
+    probabilities: [0.2, 0.5, 0.3]
+
+# 数值特征
+numerical_features:
+  年龄:
+    type: 'normal'
+    loc: 35
+    scale: 8
+    clip_min: 18
+    clip_max: 60
+  最近活跃天数:
+    type: 'exponential'
+    scale: 7
+    clip_min: 1
+    clip_max: 30
+
+# 输出文件
+output_file: 'user_profiles.csv'
